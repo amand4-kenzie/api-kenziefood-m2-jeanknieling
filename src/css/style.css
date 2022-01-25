@@ -5,7 +5,20 @@ body {
     width: 100%;
     height: 100vh;
 }
-
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #FF2253;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #FFF7F4;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #FF2253;  /* creates padding around scroll thumb */
+}
+header:nth-child(1){
+    margin: 15px;
+}
 h2 {
     font-family: 'Poppins';
     font-size: 16px;
@@ -28,15 +41,23 @@ input {
     font-size: 10px;
     padding-left: 10px;
 }
+input:focus{
+    outline: none;
+    border-color: #FF2253;
+    box-shadow: 0 0 5px #FF2253;
+}
 .btn_search {
     border-radius: 50%;
     background-color: #FFE9EE;
     width: 25px;
     height: 25px;
     border: none;
-    position: absolute;
-    left: 77%;
-    top:10%
+    position: relative;
+    left: -9%;
+    margin-top: 3px;
+}
+.btn_search:hover{
+    cursor: pointer;
 }
 .btn_search img {
     width: 10px;
@@ -58,6 +79,11 @@ nav {
 #everyone:hover, #panificadora:hover, #frutas:hover, #bebidas:hover {
    cursor: pointer;
 }
+#everyone:focus, #bebidas:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 5px #000;
+ }
 #panificadora img, #frutas img, #bebidas  img {
     width: 15px;
 }
@@ -67,8 +93,18 @@ nav {
 #panificadora{
     background-color: #FFF7F4;
 }
+#panificadora:focus{
+    outline: none;
+    border-color: #FFF7F4;
+    box-shadow: 0 0 5px #FFF7F4;
+}
 #frutas {
     background-color: #FFE4EA;
+}
+#frutas:focus{
+    outline: none;
+    border-color: #FFE4EA;
+    box-shadow: 0 0 5px #FFE4EA;
 }
 #bebidas {
     background-color: #F3EEF5;
@@ -115,6 +151,10 @@ nav {
     border-radius: 50px;
     border: none;
     background-color: #E4F7EF;
+    background-image: url('./../images/Text.png');
+    height: 12px;
+    width: 12px;
+
 }
 #AddCarrinho:hover {
     cursor: pointer;
@@ -139,10 +179,18 @@ nav {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
+.title img {
+    margin-left: 6%;
+    margin-right: 6%;
+}
+.title h2 {
+    color:#fff;
+    font-weight: 700;
+}
 .lista-produtos {
     height: 250px;
     background-color: #F8F9FA;
-    width: 78%
+    width: 80%
 }
 .footer-carrinho {
     height: 40px;
@@ -154,11 +202,77 @@ nav {
 }
 .produtos-carrinho {
     margin: 0;
-    overflow: unset;
+    overflow: auto;
     width: 100%;
+    height: 250px;
+}
+.produtos-carrinho::-webkit-scrollbar{
+    width: 10px;
+}
+.produtos-carrinho::-webkit-scrollbar-track {
+    background: #FF2253;        /* color of the tracking area */
+}
+.produtos-carrinho::-webkit-scrollbar-thumb {
+    background-color: #FFF7F4;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #FF2253;  /* creates padding around scroll thumb */
+  }
+.produtos-carrinho::-webkit-scrollbar{
+    color: #000;
+}
+.carrinho {
+    margin: 7px auto;
+    margin-bottom: 15px;
+}
+.carrinho img {
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-left: 10px;
+}
+.carrinho h2 {
+    margin-left: 35%;
+    font-size: 12px;
+    white-space: nowrap;
+    width: 10em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.carrinho button {
+    height: 12px;
+    border: none;
+    float: right;
+    position: relative;
+    top: -10px;
+    right: 5px;
+    background-color: transparent;
+    background-image: url('./../images/trash.png');
+}
+.carrinho button:hover{
+    cursor: pointer;
+}
+.carrinho p {
+    font-size: 12px;
+    margin-left: 35%;
+}
+
+@media screen and (min-width: 768px){
+    .btn_search{
+        left: -4%;
+    }
 }
 
 @media screen and (min-width: 1024px){
+    #vitrine {
+        justify-content: center;
+    }
+    .search {
+        float: right;
+        margin: 20px;
+    }
+    .btn_search {
+        left: -11%;
+    }
     .vitrine-produtos{
         float: left;
         width: 70%;
@@ -172,10 +286,19 @@ nav {
           flex-wrap: wrap;
       }
       .lista-vitrine {
-          width: 300px;
+          width: 262px;
           margin-bottom: 20px;
+      }
+      .lista-vitrine:hover{
+        box-shadow: 3px 6px 11px -3px rgba(0, 0, 0, 1);
       }
       nav {
           justify-content: flex-start;
+      }
+      .carrinho h2 {
+        white-space: nowrap;
+        width: 14em;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 }

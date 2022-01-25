@@ -10,14 +10,13 @@ class ModelVitrine {
         const nomeProduto = document.createElement('h2')
         const buttonAdd = document.createElement('button')
     
-        li.setAttribute('data-id', id)
         li.classList.add('lista-vitrine')
         nomeProduto.innerText = nome
         precoProduto.innerText = `R$ ${preco.toFixed(2).replace('.', ',')}`
         descricaoProduto.innerText = descricao
         categoriaProduto.innerText = categoria
         buttonAdd.id = 'AddCarrinho'
-        imgButton.src = "https://img.icons8.com/plasticine/100/000000/buy--v1.png"
+        buttonAdd.setAttribute('data-id', id)
         categoriaProduto.classList.add('categoria')
     
         img.src = imagem
@@ -29,7 +28,6 @@ class ModelVitrine {
         li.appendChild(descricaoProduto)
         li.appendChild(precoProduto)  
         li.appendChild(buttonAdd)
-        buttonAdd.appendChild(imgButton)
         
         return li
      }
