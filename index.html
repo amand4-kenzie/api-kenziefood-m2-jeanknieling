@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>KenzieFood</title>
+</head>
+<body>
+    <header>
+        <img src="./src/images/Group 1030.png" alt="Logo KenzieFood">
+        <div class="search">
+            <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar por produto">
+            <button class="btn_search"><img src="https://img.icons8.com/material-rounded/24/000000/search.png"/></button>
+        </div>
+        <nav>
+            <button id="everyone">Todos</button>
+            <button id="panificadora">
+                <img src="https://img.icons8.com/doodle/48/000000/bread--v1.png"/>
+                <span>Panificadora</span>
+            </button>
+            <button id="frutas">
+                <img src="https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/64/000000/external-fruits-restaurant-photo3ideastudio-lineal-color-photo3ideastudio.png"/>
+                <span>Frutas</span>
+            </button>
+            <button id="bebidas">
+                <img src="https://img.icons8.com/color/48/000000/wine-glass.png"/>
+                <span>Bebidas</span>
+            </button>
+        </nav>
+    </header>   
+    <section class="vitrine-produtos">
+        <ul id="vitrine"></ul>
+    </section>
+    <section class="vitrine-carrinho">
+        <div class="title"> 
+            <img src="./src/images/carrinho.png" alt="">
+            <h2>Carrinho</h2> 
+        </div>
+        <div class="lista-produtos">
+            <div class="teste">
+                <div class="teste2"></div>
+                <ul class="produtos-carrinho">
+                    <li class='carrinho'>
+                        <h2 class="tituloCarrinho">Teste</h2>
+                        <button id='remover'><img src="./src/images/trash.png" alt=""></button>
+                        <span class="catCarrinho">Panificadora</span>
+                        <span clas="precoCarrinho">R$ 27,00</span>                      
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class='footer-carrinho'>
+            <span>Quantidade</span>
+            <span>0</span>
+        </footer>
+    </section>
+    <script type="module" src="./src/js/index.js"></script>
+</body>
+</html>
