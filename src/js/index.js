@@ -1,6 +1,6 @@
 import { ModelApi } from "../models/modelApi.js";
 import { ModelVitrine } from "../models/modelVitrine.js";
-import { Carrinho } from "./addCarrinho.js";
+import { Carrinho } from "./carrinho.js";
 import { Buscar } from "./filtroProdutos.js";
 
 const botaoTodos = document.querySelector("#everyone");
@@ -33,3 +33,4 @@ sessaoProdutos.addEventListener('click', (evt) => {
         carrinho.addCarrinho(idProduto,api)
     }
 })
+window.onload = carrinho.manterCarrinho()
