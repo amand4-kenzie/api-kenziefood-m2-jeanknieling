@@ -14,17 +14,17 @@ class Carrinho {
 
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
     }
-    deleteCarrinho(idProduto, produtos){
-            
-        const lista = document.getElementById("produtos-carrinho");
-        const produtoFiltrado  = produtos.find((produto)=>produto.id == idProduto)
-        const index = produtos.indexOf(produtoFiltrado);
+   deleteCarrinho(idProduto){ 
 
-        this.produtosStorage.splice(index, 1)
+        const lista = document.getElementById("produtos-carrinho"); 
+        const produtoFiltrado = this.produtosStorage.find(({id}) => idProduto == id) 
+        
+        const indexProdutosFiltrado = this.produtosStorage.indexOf(produtoFiltrado) 
+        
+        this.produtosStorage.splice(indexProdutosFiltrado, 1) 
         localStorage.setItem('produtos', JSON.stringify(this.produtosStorage))
 
-        ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
-        
+        ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista) 
     }
     manterCarrinho (){
         const lista = document.getElementById("produtos-carrinho");
