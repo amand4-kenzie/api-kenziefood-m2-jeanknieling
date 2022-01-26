@@ -7,7 +7,8 @@ const botaoTodos = document.querySelector("#everyone");
 const botaoFrutas = document.querySelector("#frutas");
 const botaoPanificadora = document.querySelector("#panificadora");
 const botaoBebidas = document.querySelector("#bebidas");
-const sessaoProdutos = document.querySelector('.vitrine-produtos ul')
+const sessaoProdutos = document.querySelector('.vitrine-produtos ul');
+const sessaoCarrinho = document.querySelector(".vitrine-carrinho");
 
 const api = await ModelApi.fetchProducts();
 const ul = document.getElementById('vitrine');
@@ -33,4 +34,13 @@ sessaoProdutos.addEventListener('click', (evt) => {
         carrinho.addCarrinho(idProduto,api)
     }
 })
+
+sessaoCarrinho.addEventListener('click', (evt) => {
+    const buttonDeletar = evt.target
+    if(buttonDeletar.tagName === "BUTTON"){
+        const idProduto = buttonDeletar.getAttribute('data-id')
+        carrinho.deleteCarrinho(idProduto,api)
+    }
+})
+
 window.onload = carrinho.manterCarrinho()
