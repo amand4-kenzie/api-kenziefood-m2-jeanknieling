@@ -29,7 +29,15 @@ async function createProduct (data){
     )
     .then((res) => res.json())
     .then((res) => res)
-    .catch((error) => error);
+    // {
+    //     let sucesso = 'Produto cadastrado'
+    //     data.forEach((item,i) => {
+    //         if (item[i] !== null){
+    //             notificacaoAddProduto(sucesso, true)
+    //         }
+    //     })
+    // })
+    .catch((error) => error)
     return response
 }
 registerForm.addEventListener("submit", handleSubmit);
@@ -47,6 +55,14 @@ async function patchProducts (data,id) {
     )
     .then((res) => res.json())
     .then((res) => res)
+    // {
+    //     if(id !== null){
+    //         notificacaoAddProduto('Produto atualizado', true)
+    //     }
+    //     else {
+    //         notificacaoAddProduto('Não foi possivel atualizar o produto', false)
+    //     }
+    // })
     .catch((error) => error);
     return response
 }
@@ -78,6 +94,13 @@ async function deleteProducts (data,id) {
     )
     .then((res) => res.json())
     .then((res) => res)
+    //     if(id === data.id){
+    //         notificacaoAddProduto('Produto deletado', true)
+    //     }
+    //     else {
+    //         notificacaoAddProduto('Não foi possivel atualizar o produto', false)
+    //     }
+    // })
     .catch((error) => error);
     return response
 }
@@ -95,3 +118,21 @@ async function deleteFiles(e) {
     return response
 };
 deleteForm.addEventListener('submit', deleteFiles)
+
+// function notificacaoAddProduto(mensagem, estado){
+//     const tagNotificacao = document.querySelector(".notificacao")
+//     const span = document.querySelector(".notificacao span")
+
+//     if(estado === true){
+//         tagNotificacao.classList.add("sucees")
+//         span.innerText = mensagem
+//     }else{
+//         tagNotificacao.classList.add("error")
+//         span.innerText = mensagem
+//     }
+
+//     setTimeout(() => {
+//         tagNotificacao.classList.remove("sucees")
+//         tagNotificacao.classList.remove("error")
+//     }, 1800);
+// }
