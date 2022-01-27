@@ -1,9 +1,11 @@
-import {ModelCarrinho} from '../models/modelCarrinho.js'
+import { ModelCarrinho } from '../models/modelCarrinho.js'
 
 class Carrinho {
+
     constructor(){
         this.produtosStorage = localStorage.getItem('produtos') ? JSON.parse(localStorage.getItem('produtos')) : []
     }
+
     addCarrinho (idProduto, produtos){
         
         const lista = document.getElementById("produtos-carrinho");
@@ -14,6 +16,7 @@ class Carrinho {
 
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
     }
+    
     deleteCarrinho(idProduto, produtos){
             
         const lista = document.getElementById("produtos-carrinho");
@@ -26,9 +29,18 @@ class Carrinho {
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
         
     }
+
     manterCarrinho (){
         const lista = document.getElementById("produtos-carrinho");
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
+    }
+
+    footerCarrinho(pQntCarrinho, pPrecoTotalCarrinho) {
+        console.log(pQntCarrinho, pPrecoTotalCarrinho)
+        const precoTotal = this.produtosStorage.reduce((acc, {preco}) => acc  + preco, 0).toFixed(2);
+        const quantidade = this.produtosStorage.length;
+        pQntCarrinho.innerText= quantidade;
+        pPrecoTotalCarrinho.innerText = precoTotal;
     }
 }
 

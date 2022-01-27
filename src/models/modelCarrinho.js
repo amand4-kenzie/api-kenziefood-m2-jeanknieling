@@ -1,5 +1,6 @@
 class ModelCarrinho {
-    static templateCarrinho ({imagem,nome,preco,categoria}){
+
+    static templateCarrinho({imagem,nome,preco,categoria}){
         const li = document.createElement('li')
         const img = document.createElement('img')
         const precoProduto = document.createElement('p')
@@ -25,6 +26,7 @@ class ModelCarrinho {
 
         return li
     }
+
     static montarCarrinho (arrayProdutos, callTemplateProduto, vitrine) {
         vitrine.innerHTML = ""
 
@@ -32,7 +34,34 @@ class ModelCarrinho {
             const templateProduto  = callTemplateProduto(produto)
            vitrine.appendChild(templateProduto)
         });
-     }
+    }
+
+    static montarFooterCarrinho(footerCarrinho) {
+        const divQuantidade = document.createElement('div');
+        const divPrecoTotal = document.createElement('div');
+        const pQuantidade = document.createElement('p');
+        const pValorQuantidade = document.createElement('p');
+        const pPrecoTotal = document.createElement('p');
+        const pValorPreco = document.createElement('p');
+
+        pQuantidade.innerText = 'Quantidade';
+        pValorQuantidade.innerText = '0';
+        pValorQuantidade.id = 'p-valorQnt';
+        pPrecoTotal.innerText = 'Total';
+        pValorPreco.innerText = '0';
+        pValorPreco.id = 'p-precoTotal';
+        divQuantidade.classList.add('footer-qntCarrinho');
+        divPrecoTotal.classList.add('footer-precoTotal');
+
+        divQuantidade.appendChild(pQuantidade);
+        divQuantidade.appendChild(pValorQuantidade);
+        divPrecoTotal.appendChild(pPrecoTotal);
+        divPrecoTotal.appendChild(pValorPreco);
+        footerCarrinho.appendChild(divQuantidade);
+        footerCarrinho.appendChild(divPrecoTotal);
+
+        return footerCarrinho;
+    }
 }
 
-export {ModelCarrinho}
+export { ModelCarrinho }
