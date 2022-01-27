@@ -122,9 +122,17 @@ nav {
     overflow: scroll;
     margin-top: 20px;
     margin-left: 10px;
+    align-items: space-between;
 }
 .lista-vitrine {
     margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+.lista-vitrine .descricao{
+    height: 50px;
 }
 .lista-vitrine img {
     border: 3px solid #FFE9EE;
