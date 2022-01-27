@@ -15,7 +15,7 @@ class ModelVitrine {
         precoProduto.innerText = `R$ ${preco.toFixed(2).replace('.', ',')}`
         descricaoProduto.innerText = descricao
         categoriaProduto.innerText = categoria
-        buttonAdd.id = 'AddCarrinho'
+        buttonAdd.classList.add('addCarrinho')
         buttonAdd.setAttribute('data-id', id)
         categoriaProduto.classList.add('categoria')
     

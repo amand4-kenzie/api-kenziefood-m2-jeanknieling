@@ -11,7 +11,7 @@ class ModelCarrinho {
         nomeProduto.innerText = nome
         precoProduto.innerText = `R$ ${preco.toFixed(2).replace('.', ',')}`
         categoriaProduto.innerText = categoria
-        buttonRemove.id = 'remove'
+        buttonRemove.classList.add('remove') 
         buttonRemove.setAttribute("data-id", id)
 
         img.src = imagem
