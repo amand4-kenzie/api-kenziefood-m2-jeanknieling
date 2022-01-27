@@ -3,12 +3,14 @@ import { ModelVitrine } from "../models/modelVitrine.js";
 import { Carrinho } from "./carrinho.js";
 import { Buscar } from "./filtroProdutos.js";
 
+
 const botaoTodos = document.querySelector("#everyone");
 const botaoFrutas = document.querySelector("#frutas");
 const botaoPanificadora = document.querySelector("#panificadora");
 const botaoBebidas = document.querySelector("#bebidas");
 const sessaoProdutos = document.querySelector('.vitrine-produtos ul');
 const sessaoCarrinho = document.querySelector(".vitrine-carrinho");
+const pgCadastro = document.querySelector('#pgCadastro')
 
 const api = await ModelApi.fetchProducts();
 const ul = document.getElementById('vitrine');
@@ -44,3 +46,4 @@ sessaoCarrinho.addEventListener('click', (evt) => {
 })
 
 window.onload = carrinho.manterCarrinho()
+pgCadastro.addEventListener('click', () => window.location.href = './paginaCadastro.html')
