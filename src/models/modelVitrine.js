@@ -19,6 +19,7 @@ class ModelVitrine {
         buttonAdd.setAttribute('data-id', id)
         categoriaProduto.classList.add('categoria')
         div.classList.add('footer-li')
+        descricaoProduto.classList.add('descricao')
     
         img.src = imagem
         img.alt = nome  

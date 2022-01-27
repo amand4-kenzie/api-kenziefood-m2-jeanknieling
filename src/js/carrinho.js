@@ -9,22 +9,30 @@ class Carrinho {
     addCarrinho (idProduto, produtos){
         
         const lista = document.getElementById("produtos-carrinho");
+        const divCarrinhoVazio = document.querySelector('.carrinhoVazio')
         const produtoFiltrado  = produtos.find((produto)=>produto.id == idProduto)
 
         this.produtosStorage.push(produtoFiltrado)
         localStorage.setItem('produtos', JSON.stringify(this.produtosStorage))
+        divCarrinhoVazio.classList.add('hidden')
 
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
     }
    deleteCarrinho(idProduto){ 
 
         const lista = document.getElementById("produtos-carrinho"); 
+        const divCarrinhoVazio = document.querySelector('.carrinhoVazio')
         const produtoFiltrado = this.produtosStorage.find(({id}) => idProduto == id) 
         
         const indexProdutosFiltrado = this.produtosStorage.indexOf(produtoFiltrado) 
         
+       
         this.produtosStorage.splice(indexProdutosFiltrado, 1) 
         localStorage.setItem('produtos', JSON.stringify(this.produtosStorage))
+        
+        if (this.produtosStorage.length === 0){
+            divCarrinhoVazio.classList.remove('hidden')
+        }
 
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista) 
     }
