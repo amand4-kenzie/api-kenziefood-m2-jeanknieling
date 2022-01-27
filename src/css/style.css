@@ -67,7 +67,7 @@ nav {
     justify-content: center;
     margin-top: 15px;
 }
-#everyone, #panificadora, #frutas, #bebidas {
+#everyone, #panificadora, #frutas, #bebidas, #pgCadastro {
     margin: 0 5px;
     border-radius: 50px;
     border: none;
@@ -76,10 +76,10 @@ nav {
     display: flex;
     align-items: center;
 }
-#everyone:hover, #panificadora:hover, #frutas:hover, #bebidas:hover {
+#everyone:hover, #panificadora:hover, #frutas:hover, #bebidas:hover , #pgCadastro:hover{
    cursor: pointer;
 }
-#everyone:focus, #bebidas:focus {
+#everyone:focus, #bebidas:focus, #pgCadastro:focus {
     outline: none;
     border-color: #000;
     box-shadow: 0 0 5px #000;
