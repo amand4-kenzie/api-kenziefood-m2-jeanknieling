@@ -10,11 +10,13 @@ class Carrinho {
         
         const lista = document.getElementById("produtos-carrinho");
         const divCarrinhoVazio = document.querySelector('.carrinhoVazio')
+
         const produtoFiltrado  = produtos.find((produto)=>produto.id == idProduto)
 
         this.produtosStorage.push(produtoFiltrado)
         localStorage.setItem('produtos', JSON.stringify(this.produtosStorage))
         divCarrinhoVazio.classList.add('hidden')
+        
 
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
     }
@@ -29,7 +31,7 @@ class Carrinho {
        
         this.produtosStorage.splice(indexProdutosFiltrado, 1) 
         localStorage.setItem('produtos', JSON.stringify(this.produtosStorage))
-        
+
         if (this.produtosStorage.length === 0){
             divCarrinhoVazio.classList.remove('hidden')
         }
@@ -39,7 +41,16 @@ class Carrinho {
 
     manterCarrinho (){
         const lista = document.getElementById("produtos-carrinho");
+        const divCarrinhoVazio = document.querySelector('.carrinhoVazio')
+        const pPrecoTotalCarrinho = document.querySelector('#p-precoTotal');
+        const pQntCarrinho = document.querySelector('#p-valorQnt');
+        
+        if (this.produtosStorage.length !== 0){
+            divCarrinhoVazio.classList.add('hidden')
+        }
+
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
+        this.footerCarrinho(pQntCarrinho,pPrecoTotalCarrinho)
     }
 
     footerCarrinho(pQntCarrinho, pPrecoTotalCarrinho) {

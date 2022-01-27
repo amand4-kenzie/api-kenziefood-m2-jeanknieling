@@ -4,7 +4,6 @@ import {    ModelApi   } from "../models/modelApi.js";
 import {    Carrinho   } from "./carrinho.js";
 import {    Buscar     } from "./filtroProdutos.js";
 
-
 const botaoTodos = document.querySelector("#everyone");
 const botaoFrutas = document.querySelector("#frutas");
 const botaoPanificadora = document.querySelector("#panificadora");
