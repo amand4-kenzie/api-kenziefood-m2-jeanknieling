@@ -1,6 +1,7 @@
 import { ModelVitrine } from "../models/modelVitrine.js";
 
 class Buscar{
+    
     constructor(){}
     
     static ul = document.getElementById("vitrine");

@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
     body{
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         height: 100vh;
         font-family: 'Josefin Sans', sans-serif;
-        position: relative;
-        overflow: hidden;
     }
     h1{
         display: block;
@@ -22,23 +17,29 @@
         display: block;
         text-align: center;
         width: 100%;
-        max-width: 500px;
         background: #fff;
         border-radius: 10px;
-        padding: 62px 15px 65px 15px;
         box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
         -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
         -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
         -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
         -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
+    }
+    .voltar {
+        text-align: start;
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .voltar a {
+        text-decoration: none;
+        color: #000;
+    }
+    .voltar a:hover {
+        color:#FF2253
     }
     form input{
         display: inline-block;
-        padding: 20px;
+        padding: 8px;
         background-color: #fff;
         border: 1px solid #E6E6E6;
         margin-bottom: 17px;
@@ -47,7 +48,6 @@
         line-height: 1.2;
         font-weight: bold;
         cursor: pointer;
-        width: 50%;
     }
     form label {
         display: none;
@@ -100,4 +100,11 @@
         -webkit-transition: all 0.4s;
         -o-transition: all 0.4s;
         transition: all 0.4s;
+    }
+
+    @media screen and (min-width: 1024px){
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+        }
     }

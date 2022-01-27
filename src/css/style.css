@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 
 body {
     font-family: 'Poppins';
@@ -16,8 +16,8 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid #FF2253;  /* creates padding around scroll thumb */
 }
-header:nth-child(1){
-    margin: 15px;
+header img:nth-child(1){
+    margin: 15px
 }
 h2 {
     font-family: 'Poppins';
@@ -64,8 +64,9 @@ input:focus{
 }
 nav {
     display: flex;
-    justify-content: center;
+    height: 22px;
     margin-top: 15px;
+    overflow-x: scroll;
 }
 #everyone, #panificadora, #frutas, #bebidas, #pgCadastro {
     margin: 0 5px;
@@ -75,6 +76,7 @@ nav {
     font-size: 12px;
     display: flex;
     align-items: center;
+    margin-bottom: 5px;
 }
 #everyone:hover, #panificadora:hover, #frutas:hover, #bebidas:hover , #pgCadastro:hover{
    cursor: pointer;
@@ -109,6 +111,9 @@ nav {
 #bebidas {
     background-color: #F3EEF5;
 }
+#pgCadastro span {
+    width: 115px;
+}
 #vitrine {
     display: flex;
     overflow: scroll;
@@ -119,6 +124,8 @@ nav {
     margin-right: 15px;
 }
 .lista-vitrine img {
+    border: 3px solid #FFE9EE;
+    border-radius: 15px;
     width: 263px;
 }
 .lista-vitrine p:nth-child(5){
@@ -151,9 +158,9 @@ nav {
     border-radius: 50px;
     border: none;
     background-color: #E4F7EF;
-    background-image: url('./../images/Text.png');
-    height: 12px;
-    width: 12px;
+    background-image: url('./../images/Button\ Circle.png');
+    height: 35px;
+    width: 35px;
 
 }
 .addCarrinho:hover {
@@ -162,6 +169,17 @@ nav {
 .addCarrinho img{
     width: 20px;
     height: 20px;
+}
+.lista-vitrine .footer-li {
+    justify-self:   end;
+}
+.footer-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-li p {
+    margin-bottom: 15px;
 }
 .vitrine-carrinho {
     margin-top: 20px;
@@ -229,6 +247,7 @@ nav {
     height: 70px;
     float: left;
     margin-left: 10px;
+    border-radius: 15px;
 }
 .carrinho h2 {
     margin-left: 35%;
@@ -255,6 +274,17 @@ nav {
     font-size: 12px;
     margin-left: 35%;
 }
+.footer-carrinho {
+    display: flex;
+    flex-direction: column;
+}
+.footer-qntCarrinho,.footer-precoTotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 15px;
+}
 
 @media screen and (min-width: 768px){
     .btn_search{
@@ -266,9 +296,19 @@ nav {
     .carrinho p {
         margin-left: 125px;
     }
+    .carrinho h2 {
+        white-space: nowrap;
+        width: 17em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 }
 
 @media screen and (min-width: 1024px){
+    header{
+    height: 80px;
+    box-shadow: 0px 9px 19px -5px rgba(43,43,43,0.15);
+}
     #vitrine {
         justify-content: center;
     }
@@ -312,8 +352,11 @@ nav {
       }
       .carrinho h2 {
         white-space: nowrap;
-        width: 14em;
+        width: 17em;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+      .footer-carrinho {
+          width: 100%;
       }
 }
