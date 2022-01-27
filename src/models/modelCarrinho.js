@@ -1,6 +1,6 @@
 class ModelCarrinho {
-
-    static templateCarrinho({imagem,nome,preco,categoria}){
+  
+    static templateCarrinho ({id, imagem,nome,preco,categoria}){
         const li = document.createElement('li')
         const img = document.createElement('img')
         const precoProduto = document.createElement('p')
@@ -13,6 +13,7 @@ class ModelCarrinho {
         precoProduto.innerText = `R$ ${preco.toFixed(2).replace('.', ',')}`
         categoriaProduto.innerText = categoria
         buttonRemove.id = 'remove'
+        buttonRemove.setAttribute("data-id", id)
 
         img.src = imagem
         img.alt = nome  

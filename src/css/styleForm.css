@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    body{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        font-family: 'Josefin Sans', sans-serif;
+        position: relative;
+        overflow: hidden;
+    }
+    h1{
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        color: #333333;
+        line-height: 1.2;
+        text-align: left;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .container{
+        display: block;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 62px 15px 65px 15px;
+        box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+    form input{
+        display: inline-block;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #E6E6E6;
+        margin-bottom: 17px;
+        font-size: 15px;
+        color: #1B3815;
+        line-height: 1.2;
+        font-weight: bold;
+        cursor: pointer;
+        width: 50%;
+    }
+    form label {
+        display: none;
+    }
+    form a {
+        display: block;
+        margin-top: 15px;
+        text-decoration: none;
+        color:#000
+    }
+    form a:hover{
+        cursor: pointer;
+        color:#FF2253;
+    }
+    form button{
+        padding: 0 20px;
+        width: 160px;
+        height: 42px;
+        background-color: #57B846;
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        padding-top: 5px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        border:none;
+        cursor: pointer;
+    }
+    form button:hover {
+        background-color: #FF2253;
+    }
+    input:hover::placeholder {
+        padding-left: 10px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+   input:focus::placeholder{
+        opacity: 0;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+    input:focus{
+        outline: none;
+        border-color: #FF2253;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
