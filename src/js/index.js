@@ -10,8 +10,12 @@ const botaoPanificadora = document.querySelector("#panificadora");
 const botaoBebidas = document.querySelector("#bebidas");
 const sessaoProdutos = document.querySelector('.vitrine-produtos ul');
 const sessaoCarrinho = document.querySelector(".vitrine-carrinho");
+
 const pgCadastro = document.querySelector('#pgCadastro');
+
 const footerCarrinho = document.querySelector('.footer-carrinho');
+
+const pgCadastro = document.querySelector('#pgCadastro')
 
 ModelCarrinho.montarFooterCarrinho(footerCarrinho);
 
