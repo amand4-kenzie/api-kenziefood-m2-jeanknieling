@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/styleForm.css">
+    <title>Cadastrar Produtos</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cadastro de produtos</h1>
+      <form id="register-form">
+        <div class="input-box">
+          <label>Nome</label>
+          <input autocomplete="off" type="text" name="nome" id="nome" placeholder="Nome" />
+        </div>
+        <div class="input-box">
+          <label>Preço</label>
+          <input autocomplete="off" type="text" name="preco" id="preco" placeholder="Preço"/>
+        </div>
+        <div class="input-box">
+          <label>Categoria</label>
+          <input autocomplete="off" type="text" name="categoria" id="categoria" placeholder="Categoria"/>
+        </div>
+        <div class="input-box">
+          <label>Imagem</label>
+          <input
+            autocomplete="off"
+            type="text"
+            name="imagem"
+            id="imagem"
+            placeholder="Url da Imagem"
+          />
+        </div>
+        <div class="input-box">
+          <label>Descricao</label>
+          <input
+            autocomplete="off"
+            type="text"
+            name="descricao"
+            id="descricao"
+            placeholder="Descrição"
+          />
+        </div>
+        <button type="submit" id='cadastrar'>Cadastrar</button>
+        <a href='./produtosCadastro.html'>Ver produtos cadastrados</a>
+      </form>
+    </div>
+    <script src="./src/models/modelPost.js"></script>
+  </body>
+</html>
