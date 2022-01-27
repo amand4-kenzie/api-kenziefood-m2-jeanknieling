@@ -1,4 +1,5 @@
 class ModelCarrinho {
+  
     static templateCarrinho ({id, imagem,nome,preco,categoria}){
         const li = document.createElement('li')
         const img = document.createElement('img')

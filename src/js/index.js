@@ -10,6 +10,12 @@ const botaoPanificadora = document.querySelector("#panificadora");
 const botaoBebidas = document.querySelector("#bebidas");
 const sessaoProdutos = document.querySelector('.vitrine-produtos ul');
 const sessaoCarrinho = document.querySelector(".vitrine-carrinho");
+const footerCarrinho = document.querySelector('.footer-carrinho');
+
+ModelCarrinho.montarFooterCarrinho(footerCarrinho);
+
+const pPrecoTotalCarrinho = document.querySelector('#p-precoTotal');
+const pQntCarrinho = document.querySelector('#p-valorQnt');
 const pgCadastro = document.querySelector('#pgCadastro')
 const footerCarrinho = document.querySelector('.footer-carrinho');
 
