@@ -4,7 +4,6 @@ import {    ModelApi   } from "../models/modelApi.js";
 import {    Carrinho   } from "./carrinho.js";
 import {    Buscar     } from "./filtroProdutos.js";
 
-
 const botaoTodos = document.querySelector("#everyone");
 const botaoFrutas = document.querySelector("#frutas");
 const botaoPanificadora = document.querySelector("#panificadora");
@@ -18,6 +17,12 @@ ModelCarrinho.montarFooterCarrinho(footerCarrinho);
 const pPrecoTotalCarrinho = document.querySelector('#p-precoTotal');
 const pQntCarrinho = document.querySelector('#p-valorQnt');
 const pgCadastro = document.querySelector('#pgCadastro')
+const footerCarrinho = document.querySelector('.footer-carrinho');
+
+ModelCarrinho.montarFooterCarrinho(footerCarrinho);
+
+const pPrecoTotalCarrinho = document.querySelector('#p-precoTotal');
+const pQntCarrinho = document.querySelector('#p-valorQnt');
 
 const api = await ModelApi.fetchProducts();
 const ul = document.getElementById('vitrine');
@@ -55,3 +60,4 @@ sessaoCarrinho.addEventListener('click', (evt) => {
 
 window.onload = carrinho.manterCarrinho()
 pgCadastro.addEventListener('click', () => window.location.href = './paginaCadastro.html')
+window.onload = carrinho.manterCarrinho()

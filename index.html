@@ -12,28 +12,29 @@
     <header>
         <img src="./src/images/Group 1030.png" alt="Logo KenzieFood">
         <div class="search">
-            <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar por produto">
-            <button class="btn_search"><img src="https://img.icons8.com/material-rounded/24/000000/search.png"/></button>
+            <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar por produto"> 
+            <button class="btn_search"><img src="https://img.icons8.com/material-rounded/24/000000/search.png" class='imgPesquisa'/></button>
         </div>
-        <nav>
-            <button id="everyone">Todos</button>
-            <button id="panificadora">
-                <img src="https://img.icons8.com/doodle/48/000000/bread--v1.png"/>
-                <span>Panificadora</span>
-            </button>
-            <button id="frutas">
-                <img src="https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/64/000000/external-fruits-restaurant-photo3ideastudio-lineal-color-photo3ideastudio.png"/>
-                <span>Frutas</span>
-            </button>
-            <button id="bebidas">
-                <img src="https://img.icons8.com/color/48/000000/wine-glass.png"/>
-                <span>Bebidas</span>
-            </button>
-            <button id='pgCadastro'>
-                <span>Cadastrar Produtos</span>
-            </button>
-        </nav>
+        
     </header>   
+    <nav>
+        <button id="everyone">Todos</button>
+        <button id="panificadora">
+            <img src="https://img.icons8.com/doodle/48/000000/bread--v1.png"/>
+            <span>Panificadora</span>
+        </button>
+        <button id="frutas">
+            <img src="https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/64/000000/external-fruits-restaurant-photo3ideastudio-lineal-color-photo3ideastudio.png"/>
+            <span>Frutas</span>
+        </button>
+        <button id="bebidas">
+            <img src="https://img.icons8.com/color/48/000000/wine-glass.png"/>
+            <span>Bebidas</span>
+        </button>
+        <button id='pgCadastro'>
+            <span>Painel</span>
+        </button>
+    </nav>
     <main>
     <section class="vitrine-produtos">
         <ul id="vitrine"></ul>
@@ -41,10 +42,17 @@
     </main>
     <section class="vitrine-carrinho">
         <div class="title"> 
-            <img src="./src/images/carrinho.png" alt="">
+            <img src="./src/images/carrinho.png" alt="">    
             <h2>Carrinho</h2> 
         </div>
         <div class="lista-produtos" id="lista-produtos">
+            <div class="carrinhoVazio">
+                <figure>
+                    <img src="./src/images/shopping-bag.svg" alt="">
+                </figure>
+                <h2>Ops!</h2>
+                <p>Por enquanto não temos produtos no carrinho</p>
+            </div>
             
                 <ul class="produtos-carrinho" id="produtos-carrinho">
                     

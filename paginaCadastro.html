@@ -10,8 +10,12 @@
   </head>
   <body>
     <div class="container">
-      <h1>Cadastro de produtos</h1>
+      <div class="voltar">
+        <a href="./index.html">Voltar</a>
+      </div>
+      
       <form id="register-form">
+        <h1>Cadastro de produtos</h1>
         <div class="input-box">
           <label>Nome</label>
           <input autocomplete="off" type="text" name="nome" id="nome" placeholder="Nome" />
@@ -44,10 +48,61 @@
             placeholder="Descrição"
           />
         </div>
-        <button type="submit" id='cadastrar'>Cadastrar</button>
-        <a href='./produtosCadastro.html'>Ver produtos cadastrados</a>
+        <div class="btn_cadastrar">
+           <button type="submit" id='cadastrar'>Cadastrar</button>
+        </div>
+        
+      </form>
+      <form id="update-form">
+        <h1>Atualizar produtos</h1>
+        <div class="input-box">
+          <label>ID do produto</label>
+          <input autocomplete="off" type="text" name="idProduto" id="idProduto" placeholder="ID do produto" />
+        </div>
+        <div class="input-box">
+          <label>Nome</label>
+          <input autocomplete="off" type="text" name="nome" id="nome" placeholder="Nome" />
+        </div>
+        <div class="input-box">
+          <label>Preço</label>
+          <input autocomplete="off" type="text" name="preco" id="preco" placeholder="Preço"/>
+        </div>
+        <div class="input-box">
+          <label>Categoria</label>
+          <input autocomplete="off" type="text" name="categoria" id="categoria" placeholder="Categoria"/>
+        </div>
+        <div class="input-box">
+          <label>Imagem</label>
+          <input
+            autocomplete="off"
+            type="text"
+            name="imagem"
+            id="imagem"
+            placeholder="Url da Imagem"
+          />
+        </div>
+        <div class="input-box">
+          <label>Descricao</label>
+          <input
+            autocomplete="off"
+            type="text"
+            name="descricao"
+            id="descricao"
+            placeholder="Descrição"
+          />
+        </div>
+        <button type="submit" id='cadastrar'>Atualizar</button>
+      </form>
+      <form id="delete-form">
+        <h1>Deletar Produtos</h1>
+        <div class="input-box">
+          <label>ID do produto</label>
+          <input autocomplete="off" type="text" name="idProduto" id="idProduto" placeholder="ID do produto" />
+        </div>    
+        <button type="submit" id='cadastrar'>Deletar</button>
       </form>
     </div>
+    <a href='./produtosCadastro.html'>Ver produtos cadastrados</a>
     <script src="./src/models/modelPost.js"></script>
   </body>
 </html>
