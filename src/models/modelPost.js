@@ -28,22 +28,17 @@ async function createProduct (data){
         }
     )
     .then((res) => res.json())
-    .then((res) => res)
-    // {
-    //     let sucesso = 'Produto cadastrado'
-    //     data.forEach((item,i) => {
-    //         if (item[i] !== null){
-    //             notificacaoAddProduto(sucesso, true)
-    //         }
-    //     })
-    // })
-    .catch((error) => error)
-    return response
+   
+    if(response.error === undefined){
+        notificacaoAddProduto('Produto Cadastrado!', true)
+    } else {
+        notificacaoAddProduto('Algo deu errado!', false)
+    }
 }
 registerForm.addEventListener("submit", handleSubmit);
 
 async function patchProducts (data,id) {
-    const response = fetch(`https://kenzie-food-api.herokuapp.com/my/product/${id}`,
+    const response = await fetch(`https://kenzie-food-api.herokuapp.com/my/product/${id}`,
     {
         method: 'PATCH',
         headers: {
@@ -54,17 +49,13 @@ async function patchProducts (data,id) {
     }
     )
     .then((res) => res.json())
-    .then((res) => res)
-    // {
-    //     if(id !== null){
-    //         notificacaoAddProduto('Produto atualizado', true)
-    //     }
-    //     else {
-    //         notificacaoAddProduto('Não foi possivel atualizar o produto', false)
-    //     }
-    // })
-    .catch((error) => error);
-    return response
+    .catch(error => error)
+
+    if(response.msg === undefined) {
+        notificacaoAddProduto('Produto Atualizado!', true)
+    } else {
+        notificacaoAddProduto('Produto não encontrado', false)
+    }
 }
 async function updateFiles(e) {
     e.preventDefault()
@@ -82,7 +73,7 @@ async function updateFiles(e) {
 udpdateForm.addEventListener('submit', updateFiles)
 
 async function deleteProducts (data,id) {
-    const response = fetch(`https://kenzie-food-api.herokuapp.com/my/product/${id}`,
+    const response = await fetch(`https://kenzie-food-api.herokuapp.com/my/product/${id}`,
     {
         method: 'DELETE',
         headers: {
@@ -93,16 +84,13 @@ async function deleteProducts (data,id) {
     }
     )
     .then((res) => res.json())
-    .then((res) => res)
-    //     if(id === data.id){
-    //         notificacaoAddProduto('Produto deletado', true)
-    //     }
-    //     else {
-    //         notificacaoAddProduto('Não foi possivel atualizar o produto', false)
-    //     }
-    // })
-    .catch((error) => error);
-    return response
+    .catch(error => error);
+
+    if(response.msg === undefined) {
+        notificacaoAddProduto('Produto Deletado!', true)
+    } else {
+        notificacaoAddProduto('Produto não encontrado!', false)
+    }
 }
 async function deleteFiles(e) {
     e.preventDefault()
@@ -119,20 +107,20 @@ async function deleteFiles(e) {
 };
 deleteForm.addEventListener('submit', deleteFiles)
 
-// function notificacaoAddProduto(mensagem, estado){
-//     const tagNotificacao = document.querySelector(".notificacao")
-//     const span = document.querySelector(".notificacao span")
+function notificacaoAddProduto(mensagem, estado){
+    const tagNotificacao = document.querySelector(".notificacao")
+    const span = document.querySelector(".notificacao span")
 
-//     if(estado === true){
-//         tagNotificacao.classList.add("sucees")
-//         span.innerText = mensagem
-//     }else{
-//         tagNotificacao.classList.add("error")
-//         span.innerText = mensagem
-//     }
+    if(estado === true){
+        tagNotificacao.classList.add("sucees")
+        span.innerText = mensagem
+    } else {
+        tagNotificacao.classList.add("error")
+        span.innerText = mensagem
+    }
 
-//     setTimeout(() => {
-//         tagNotificacao.classList.remove("sucees")
-//         tagNotificacao.classList.remove("error")
-//     }, 1800);
-// }
+    setTimeout(() => {
+        tagNotificacao.classList.remove("sucees")
+        tagNotificacao.classList.remove("error")
+    }, 1800);
+}

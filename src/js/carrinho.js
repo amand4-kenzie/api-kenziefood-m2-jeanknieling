@@ -26,10 +26,11 @@ class Carrinho {
     }
 
 
-   deleteCarrinho(idProduto){ 
+    deleteCarrinho(idProduto){ 
         const lista = document.getElementById("produtos-carrinho"); 
         const divCarrinhoVazio = document.querySelector('.carrinhoVazio')
         const produtoFiltrado = this.produtosStorage.find(({id}) => idProduto == id) 
+        const footerCarrinho = document.querySelector('.footer-carrinho');
         
         const indexProdutosFiltrado = this.produtosStorage.indexOf(produtoFiltrado) 
         
@@ -51,9 +52,14 @@ class Carrinho {
         const divCarrinhoVazio = document.querySelector('.carrinhoVazio')
         const pPrecoTotalCarrinho = document.querySelector('#p-precoTotal');
         const pQntCarrinho = document.querySelector('#p-valorQnt');
+        const footerCarrinho = document.querySelector('.footer-carrinho');
         
         if (this.produtosStorage.length !== 0){
             divCarrinhoVazio.classList.add('hidden')
+        }
+
+        if (this.produtosStorage.length > 0){
+            footerCarrinho.classList.remove('hidden')
         }
 
         ModelCarrinho.montarCarrinho(this.produtosStorage, ModelCarrinho.templateCarrinho,lista)
@@ -65,14 +71,6 @@ class Carrinho {
         const quantidade = this.produtosStorage.length;
         pQntCarrinho.innerText= quantidade;
         pPrecoTotalCarrinho.innerText = `R$: ${precoTotal}`;
-    }
-
-    footerCarrinho(pQntCarrinho, pPrecoTotalCarrinho) {
-        console.log(pQntCarrinho, pPrecoTotalCarrinho)
-        const precoTotal = this.produtosStorage.reduce((acc, {preco}) => acc  + preco, 0).toFixed(2);
-        const quantidade = this.produtosStorage.length;
-        pQntCarrinho.innerText= quantidade;
-        pPrecoTotalCarrinho.innerText = precoTotal;
     }
 }
 

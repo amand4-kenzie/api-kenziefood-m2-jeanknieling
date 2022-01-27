@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Poppins';
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 body::-webkit-scrollbar{
@@ -16,8 +16,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid #FF2253;  /* creates padding around scroll thumb */
 }
+header {
+    width: 100vw;
+}
 header img{
     margin: 15px
+}
+main {
+    width: 100vw;
 }
 h2 {
     font-family: 'Poppins';
@@ -237,7 +243,7 @@ nav {
     margin: 0;
     overflow: auto;
     width: 100%;
-    height: 250px;
+    height: 100%;
 }
 .produtos-carrinho::-webkit-scrollbar{
     width: 10px;
@@ -335,13 +341,19 @@ nav {
         width: 17em;
         overflow: hidden;
         text-overflow: ellipsis;
-      }
+    }
 }
 
 @media screen and (min-width: 1024px){
     header{
     height: 80px;
     box-shadow: 0px 9px 19px -5px rgba(43,43,43,0.15);
+    }
+    nav {
+        height: 50px
+    }
+    nav button {
+        height: 35px
     }
     #vitrine {
         justify-content: center;
@@ -350,7 +362,8 @@ nav {
         margin-right: 15px;
         max-width: 350px;
         position: absolute;
-        left: 74%
+        left: 72%;
+        width: 340px;
     }
     .search {
         float: right;
@@ -380,6 +393,7 @@ nav {
       }
       .lista-produtos {
           width: 100%;
+          height: 380px
       }
       .title {
           width: 100%;
@@ -390,7 +404,7 @@ nav {
       }
       .carrinho h2 {
         white-space: nowrap;
-        width: 17em;
+        width: 16em;
         overflow: hidden;
         text-overflow: ellipsis;
       }
