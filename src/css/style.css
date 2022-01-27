@@ -290,7 +290,7 @@ nav {
           margin-bottom: 20px;
       }
       .lista-vitrine:hover{
-        box-shadow: 3px 6px 11px -3px rgba(0, 0, 0, 1);
+        box-shadow: 3px 3px 5px -3px rgba(0, 0, 0, 0.15);
       }
       nav {
           justify-content: flex-start;
