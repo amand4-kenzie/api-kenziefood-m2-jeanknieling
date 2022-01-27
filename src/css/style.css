@@ -25,6 +25,9 @@ h2 {
     font-weight: 700;
     color: #000
 }
+.ops {
+    color: #868E96;
+}
 p {
     margin-top: 16px;
 }
@@ -339,12 +342,15 @@ nav {
     header{
     height: 80px;
     box-shadow: 0px 9px 19px -5px rgba(43,43,43,0.15);
-}
+    }
     #vitrine {
         justify-content: center;
     }
     .vitrine-carrinho {
         margin-right: 15px;
+        max-width: 350px;
+        position: absolute;
+        left: 74%
     }
     .search {
         float: right;

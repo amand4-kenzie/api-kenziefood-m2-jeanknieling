@@ -15,7 +15,7 @@
       </div>
       
       <form id="register-form">
-        <h1>Cadastro de produtos</h1>
+        <h1 class="cadastrados">Cadastro de produtos</h1>
         <div class="input-box">
           <label>Nome</label>
           <input autocomplete="off" type="text" name="nome" id="nome" placeholder="Nome" />
@@ -54,7 +54,7 @@
         
       </form>
       <form id="update-form">
-        <h1>Atualizar produtos</h1>
+        <h1 class='atualizar'>Atualizar produtos</h1>
         <div class="input-box">
           <label>ID do produto</label>
           <input autocomplete="off" type="text" name="idProduto" id="idProduto" placeholder="ID do produto" />
@@ -94,7 +94,7 @@
         <button type="submit" id='cadastrar'>Atualizar</button>
       </form>
       <form id="delete-form">
-        <h1>Deletar Produtos</h1>
+        <h1 class="deletar">Deletar Produtos</h1>
         <div class="input-box">
           <label>ID do produto</label>
           <input autocomplete="off" type="text" name="idProduto" id="idProduto" placeholder="ID do produto" />
@@ -102,7 +102,10 @@
         <button type="submit" id='cadastrar'>Deletar</button>
       </form>
     </div>
-    <a href='./produtosCadastro.html'>Ver produtos cadastrados</a>
+    <div class="notificacao">
+      <span>Adicionado produto no carrinho</span>
+  </div>
+    <a href='./produtosCadastro.html' class="verCadastrados">Ver produtos cadastrados</a>
     <script src="./src/models/modelPost.js"></script>
   </body>
 </html>
