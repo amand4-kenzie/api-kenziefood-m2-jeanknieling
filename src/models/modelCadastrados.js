@@ -11,17 +11,19 @@ async function getProducts () {
     )
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         montarVitrine(data, template, pgCadastro)
     })
 }
 getProducts()
 
-function template ({imagem,nome,preco,descricao,categoria}){
+function template ({id, imagem,nome,preco,descricao,categoria}){
     const li = document.createElement('li')
     const img = document.createElement('img')
     const precoProduto = document.createElement('p')
     const descricaoProduto = document.createElement('p')
     const categoriaProduto = document.createElement('p')
+    const idProd = document.createElement('p')
     const nomeProduto = document.createElement('h2')
 
     li.classList.add('lista-vitrine')
@@ -29,12 +31,14 @@ function template ({imagem,nome,preco,descricao,categoria}){
     precoProduto.innerText = `R$ ${preco.toFixed(2).replace('.', ',')}`
     descricaoProduto.innerText = descricao
     categoriaProduto.innerText = categoria
+    idProd.innerText = `ID do produto: ${id}`
     categoriaProduto.classList.add('categoria')
 
     img.src = imagem
     img.alt = nome
     li.appendChild(img)
     li.appendChild(categoriaProduto)
+    li.appendChild(idProd)
     li.appendChild(nomeProduto)
     li.appendChild(descricaoProduto)
     li.appendChild(precoProduto)
